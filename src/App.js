@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import EnterInput from "./components/EnterInput";
+import TasksList from "./components/TasksList";
+import {useEffect, useState} from "react";
+import {getListItem, setListItem, updateListItem} from "./helpers/task_helper";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [todos, setTodos] = useState([])
+    const [item, setItem] = useState({})
+    useEffect(() => {
+        setTodos(getListItem())
+    }, [])
+
+    useEffect(() => {
+        setItem()
+    }, [item])
+
+    const addTask = (text, color) => {
+        setListItem(text, color)
+        setTodos(getListItem())
+    }
+    const change = (elem) => {
+        updateListItem(elem)
+        setItem(elem)
+    }
+
+    return (
+        <div className="App">
+            <EnterInput add={addTask}/>
+            <TasksList list={todos} check={change}/>
+        </div>
+    );
 }
 
 export default App;

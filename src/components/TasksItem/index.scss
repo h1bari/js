@@ -1,0 +1,39 @@
+li {
+  background: #191A1E;
+  margin-top: 32px;
+  padding: 14px 20px;
+  box-shadow: 16px 16px 20px rgba(0, 0, 0, 0.15), -8px -8px 20px rgba(255, 255, 255, 0.05);
+  color: aliceblue;
+  font-weight: 600;
+  font-size: 24px;
+  border-radius: 25px;
+  width: 480px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  span{
+    width: 95%;
+  }
+  &:hover{
+    background: #282a31;
+  }
+  button{
+    width: 20px;
+    height: 20px;
+    flex-basis: 20px;
+    cursor: pointer;
+  }
+}
+.github-picker{
+  margin: 20px auto;
+}
+.github-picker div:nth-child(2){
+  display: none!important;
+}
+.checked{
+  background: url("../../assets/check.png") no-repeat center;
+  background-size: 90%;
+  border: none;
+}
