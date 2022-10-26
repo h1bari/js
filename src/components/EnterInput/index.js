@@ -11,6 +11,7 @@ const EnterInput = ({add}) => {
         setText('')
         setColor('#000')
     }
+
     // const changeColor = (e) => {
     //     console.log(e.hex)
     //     setColor(e.hex)
