@@ -8,9 +8,6 @@ const createTag = (tag, append = document.body, text = '',src = '', className = 
     } else {
         tagName.innerHTML = text
     }
-    // if(style){
-    //     // continue!!!!!!!!!!
-    // }
     append.append(tagName)
 }
 const createItem = (name, src, callback) => {
